@@ -16,6 +16,9 @@ export const colors = Object.freeze({
     light_lighter: "#ffffff",
     floor_clean: COLOR_SUCCESS,
     floor_dirty: "#8c6450",
+    robot_body: "#88909c",
+    robot_on: "#16e260",
+    robot_idle: "#ffd223",
 });
 
 export type ColorName = keyof (typeof colors);
