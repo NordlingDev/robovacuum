@@ -13,6 +13,17 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         font-weight: 400;
         cursor: default;
+
+        ${({ theme }) => css`
+            background: ${conditional(theme.colorScheme, {
+                dark: color("dark"),
+                light: color("light_lighter"),
+            })};
+            color: ${conditional(theme.colorScheme, {
+                dark: color("light"),
+                light: color("dark"),
+            })};
+        `}
     }
 
     *, *::before, *::after {
@@ -28,8 +39,8 @@ export const Root = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    padding: ${styles.spacing}px;
     transition: ${transition("background", {
         duration: transition.Duration.Medium,
     })};
@@ -52,6 +63,8 @@ export const Header = styled(views.Header)`
     margin-bottom: ${styles.spacing}px;
 `;
 
-export const Main = styled.main``;
+export const Main = styled.main`
+    margin-bottom: ${styles.spacing}px;
+`;
 
 export const Room = styled(views.Room)``;
