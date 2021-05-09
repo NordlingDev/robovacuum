@@ -5,7 +5,8 @@
     "scripts": {
         "start": "craco start",
         "build": "craco build",
-        "test": "craco test"
+        "test": "craco test",
+        "cypress-ct": "cypress open-ct"
     },
     "dependencies": {
         "lodash": "^4.17.21",
@@ -16,6 +17,8 @@
     },
     "devDependencies": {
         "@craco/craco": "^6.1.2",
+        "@cypress/react": "^5.5.0",
+        "@cypress/webpack-dev-server": "^1.1.6",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
@@ -26,6 +29,7 @@
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
         "@types/styled-components": "^5.1.9",
+        "cypress": "^7.2.0",
         "react-scripts": "4.0.3",
         "typescript": "^4.1.2"
     },
