@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+import * as components from "~/components";
 import { styles } from "~/config";
 import { color, conditional, transition } from "~/utils";
 
@@ -21,3 +22,5 @@ export const Root = styled.main`
         })};
     `}
 `;
+
+export const Grid = styled(components.Grid)``;
