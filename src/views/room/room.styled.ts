@@ -47,11 +47,60 @@ export const Button = styled(components.Button)`
     }
 `;
 
-export const Floor = styled.div`
-    position: relative;
-    width: 100%;
+export const CleanButton = styled(Button).attrs(() => ({
+    type: "success",
+    icon: "power",
+}))`
+    width: 130px;
 `;
 
-export const FloorGrid = styled(components.Grid)``;
+export const PauseButton = styled(Button).attrs(() => ({
+    type: "warning",
+    icon: "power",
+}))`
+    width: 130px;
+`;
+
+export const ResetButton = styled(Button).attrs(() => ({
+    type: "secondary",
+    icon: "refresh-cw",
+}))``;
+
+export const Floor = styled.div<{ $dim: boolean }>`
+    position: relative;
+    width: 100%;
+
+    ${({ $dim }) => $dim && css`
+        opacity: 0.25;
+        filter: saturate(0%);
+    `}
+`;
+
+export const FloorGrid = styled(components.Grid)<{ $finished: boolean }>`
+    ${({ $finished }) => $finished && css`
+        opacity: 0.25;
+    `}
+`;
 
 export const FloorTile = styled(components.FloorTile)``;
+
+export const RobotContainer = styled.div<{ $floorSize: number; $speed?: number }>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; left: 0;
+
+    ${({ $floorSize }) => css`
+        width: ${$floorSize}px;
+        height: ${$floorSize}px;
+    `}
+
+    ${({ $speed }) => $speed !== undefined && css`
+        transition: ${transition("transform", {
+            duration: $speed,
+        })};
+    `}
+`;
+
+export const Robot = styled(components.Robot)``;

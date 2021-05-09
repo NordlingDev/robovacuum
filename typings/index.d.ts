@@ -27,6 +27,14 @@ declare namespace RV {
         floorSize: number;
     }
 
+    export interface RobotState {
+        running: boolean;
+        paused: boolean;
+        speed: number;
+        position: Point2D;
+        timeElapsed: number;
+    }
+
     export interface Theme {
         colorScheme: ColorScheme;
     }
