@@ -9,6 +9,13 @@ export const Room: RV.Component<RoomProps> = ({
 }) => {
     return (
         <sc.Root className={className} style={style}>
+            <sc.ControlPanel>
+                <sc.ControlPanelLeft>
+                    <sc.Button type="primary" label="Clean" />
+                </sc.ControlPanelLeft>
+                <sc.ControlPanelRight></sc.ControlPanelRight>
+            </sc.ControlPanel>
+
             <sc.Grid
                 sizeX={10}
                 sizeY={10}

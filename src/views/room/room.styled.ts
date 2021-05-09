@@ -23,4 +23,28 @@ export const Root = styled.main`
     `}
 `;
 
+export const ControlPanel = styled.div`
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: ${styles.spacing}px;
+`;
+
+export const ControlPanelLeft = styled.div`
+    display: flex;
+    margin-right: auto;
+`;
+
+export const ControlPanelRight = styled.div`
+    display: flex;
+    margin-left: auto;
+`;
+
+export const Button = styled(components.Button)`
+    &:not(:last-child) {
+        margin-right: ${styles.spacing * 0.5}px;
+    }
+`;
+
 export const Grid = styled(components.Grid)``;
