@@ -164,6 +164,17 @@ export const Room: RV.Component<RoomProps> = ({
                     </sc.RobotContainer>
                 )}
             </sc.Floor>
+            
+            {finished && (
+                <sc.Message type="success">
+                    <p>Cleaning completed in <strong>{
+                        (timeElapsed / 1000).toLocaleString(lang, {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                        })
+                    }</strong> seconds.</p>
+                </sc.Message>
+            )}
         </sc.Root>
     );
 };

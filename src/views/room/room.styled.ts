@@ -23,6 +23,20 @@ export const Root = styled.main`
     `}
 `;
 
+export const Message = styled(components.Message)`
+    position: absolute;
+    bottom: -${styles.spacing * 0.5}px;
+
+    p {
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+    }
+
+    strong {
+        font-weight: 600;
+    }
+`;
+
 export const ControlPanel = styled.div`
     display: flex;
     align-items: center;
