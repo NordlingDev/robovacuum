@@ -12,8 +12,9 @@ export const Room: RV.Component<RoomProps> = ({
     className,
     style,
 }) => {
+    const lang = document.documentElement.lang || "en";
     const [{ roomDimensions, floorSize }] = useConfig();
-    const [{ speed, running, paused, position }, setRobotState] = useRobotState();
+    const [{ speed, running, paused, timeElapsed, position }, setRobotState] = useRobotState();
     const [finished, setFinished] = React.useState<boolean>(false);
     const onRobotMove = React.useCallback((info: RobotLogicMoveInfo) => {
         if(info.finished) {
@@ -95,7 +96,40 @@ export const Room: RV.Component<RoomProps> = ({
                         />
                     )}
                 </sc.ControlPanelLeft>
-                <sc.ControlPanelRight></sc.ControlPanelRight>
+                <sc.ControlPanelRight>
+                    <sc.ValueDisplay
+                        label="Steps"
+                        value={running
+                            ? robotLogic.steps.toLocaleString(lang, {
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                            })
+                            : "–"
+                        }
+                        $dim={!running}
+                    />
+                    <sc.ValueDisplay
+                        label="Position"
+                        value={running
+                            ? `${position.x}x${position.y}`
+                            : "–"
+                        }
+                        $dim={!running}
+                    />
+                    <sc.ValueDisplay
+                        label="Time Elapsed"
+                        value={running
+                            ? `${(timeElapsed / 1000)
+                                .toLocaleString(lang, {
+                                    minimumFractionDigits: 1,
+                                    maximumFractionDigits: 1,
+                                })
+                            }s`
+                            : "–"
+                        }
+                        $dim={!running}
+                    />
+                </sc.ControlPanelRight>
             </sc.ControlPanel>
 
             <sc.Floor $dim={!running}>

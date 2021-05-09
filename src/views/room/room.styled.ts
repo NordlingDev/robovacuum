@@ -66,6 +66,16 @@ export const ResetButton = styled(Button).attrs(() => ({
     icon: "refresh-cw",
 }))``;
 
+export const ValueDisplay = styled(components.ValueDisplay)<{ $dim: boolean }>`
+    &:not(:last-child) {
+        margin-right: ${styles.spacing}px;
+    }
+
+    ${({ $dim }) => $dim && css`
+        opacity: 0.25;
+    `}
+`;
+
 export const Floor = styled.div<{ $dim: boolean }>`
     position: relative;
     width: 100%;
