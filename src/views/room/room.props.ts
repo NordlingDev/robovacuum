@@ -1,0 +1,3 @@
+export interface RoomProps extends RV.ComponentProps {
+    // ...
+}
