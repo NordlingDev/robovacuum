@@ -9,6 +9,8 @@ import * as sc from "./app.styled";
 export const App: RV.Component<AppProps> = () => {
     const configContextValue = React.useState<RV.Config>({
         colorScheme: "dark",
+        roomDimensions: { x: 10, y: 10 },
+        floorSize: 64,
     });
     const [{ colorScheme }] = configContextValue;
     const theme = React.useMemo<RV.Theme>(() => ({ colorScheme }), [colorScheme]);

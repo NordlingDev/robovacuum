@@ -8,6 +8,8 @@ export type ConfigContextValue = [
 export const ConfigContext = React.createContext<ConfigContextValue>([
     {
         colorScheme: "dark",
+        roomDimensions: { x: 10, y: 10 },
+        floorSize: 64,
     },
     () => undefined,
 ]);

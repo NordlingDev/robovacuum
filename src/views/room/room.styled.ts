@@ -47,4 +47,11 @@ export const Button = styled(components.Button)`
     }
 `;
 
-export const Grid = styled(components.Grid)``;
+export const Floor = styled.div`
+    position: relative;
+    width: 100%;
+`;
+
+export const FloorGrid = styled(components.Grid)``;
+
+export const FloorTile = styled(components.FloorTile)``;

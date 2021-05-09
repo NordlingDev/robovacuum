@@ -1,7 +1,9 @@
+const COLOR_SUCCESS = "#228e6c";
+
 export const colors = Object.freeze({
     primary: "#e21467",
     info: "#03aad6",
-    success: "#228e6c",
+    success: COLOR_SUCCESS,
     warning: "#dea216",
     danger: "#c12245",
     white: "#ffffff",
@@ -12,6 +14,8 @@ export const colors = Object.freeze({
     light: "#e1e5ea",
     light_darker: "#c8cdd4",
     light_lighter: "#ffffff",
+    floor_clean: COLOR_SUCCESS,
+    floor_dirty: "#8c6450",
 });
 
 export type ColorName = keyof (typeof colors);

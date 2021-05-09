@@ -23,6 +23,8 @@ declare namespace RV {
 
     export interface Config {
         colorScheme: ColorScheme;
+        roomDimensions: RV.Point2D;
+        floorSize: number;
     }
 
     export interface Theme {
