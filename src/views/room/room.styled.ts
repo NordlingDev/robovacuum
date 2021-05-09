@@ -121,7 +121,7 @@ export const RobotContainer = styled.div<{ $floorSize: number; $speed?: number }
     `}
 
     ${({ $speed }) => $speed !== undefined && css`
-        transition: ${transition("transform", {
+        transition: ${transition(["top", "left"], {
             duration: $speed,
         })};
     `}

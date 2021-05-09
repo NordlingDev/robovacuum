@@ -151,14 +151,14 @@ export const Room: RV.Component<RoomProps> = ({
                 {running && (
                     <sc.RobotContainer
                         style={{
-                            transform: `translate3d(${
-                                position.x * (floorSize + FLOOR_TILE_SPACING)
-                            }px, ${
-                                position.y * (floorSize + FLOOR_TILE_SPACING)
-                            }px, 0)`
+                            left: position.x * (floorSize + FLOOR_TILE_SPACING),
+                            top: position.y * (floorSize + FLOOR_TILE_SPACING),
                         }}
                         $floorSize={floorSize}
-                        $speed={robotLogic.currentPosition ? robotLogic.speed : undefined}
+                        $speed={robotLogic.currentPosition && robotLogic.steps > 0
+                            ? robotLogic.speed
+                            : undefined
+                        }
                     >
                         <sc.Robot status={paused ? "idle" : "on"} />
                     </sc.RobotContainer>
