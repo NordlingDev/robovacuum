@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+import * as components from "~/components";
 import { styles } from "~/config";
 import { color, conditional, transition } from "~/utils";
 
@@ -42,3 +43,5 @@ export const AppName = styled.div`
         })};
     `}
 `;
+
+export const ColorSchemeSwitch = styled(components.ColorSchemeSwitch)``;
